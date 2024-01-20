@@ -3,6 +3,7 @@ import turtle
 import pandas as pd
 
 screen = turtle.Screen()
+screen.screensize(800, 600)
 screen.title("U.S. States Game")
 
 # Load image into turtle
@@ -23,6 +24,11 @@ while len(guessed_states) < 50:
         title=f"{len(guessed_states)}/50 States Correct", prompt="What's another state's name").title()
 
     if answer_state == "Exit":
+        temp = []
+        for element in all_states:
+            if element not in guessed_states:
+                temp.append(element)
+        print(temp)
         break
 
     if answer_state in all_states:
