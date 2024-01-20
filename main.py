@@ -24,11 +24,9 @@ while len(guessed_states) < 50:
         title=f"{len(guessed_states)}/50 States Correct", prompt="What's another state's name").title()
 
     if answer_state == "Exit":
-        temp = []
-        for element in all_states:
-            if element not in guessed_states:
-                temp.append(element)
+        temp = [item for item in all_states if item not in guessed_states]
         print(temp)
+
         break
 
     if answer_state in all_states:
