@@ -22,6 +22,9 @@ while len(guessed_states) < 50:
     answer_state = screen.textinput(
         title=f"{len(guessed_states)}/50 States Correct", prompt="What's another state's name").title()
 
+    if answer_state == "Exit":
+        break
+
     if answer_state in all_states:
         guessed_states.append(answer_state)
         pen.hideturtle()
